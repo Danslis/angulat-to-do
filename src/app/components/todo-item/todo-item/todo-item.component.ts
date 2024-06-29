@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { TodoItem } from '../../../interfaces/todo-group.interface';
 
 
 
@@ -12,5 +13,6 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './todo-item.component.scss'
 })
 export class TodoItemComponent {
-
+  @Input() todoItem!: TodoItem;
+  @Input() index!: number;
 }
