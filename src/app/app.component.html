@@ -8,6 +8,9 @@
 </header>
 
 <main class="main">
+  <div class="main__controls">
+    <button (click)="addGroup()" class="button">Добавить группу</button>
+  </div>
   <app-todo-group
   [index]="i"
   [todoGroup]="group"
