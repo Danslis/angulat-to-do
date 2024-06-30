@@ -1,8 +1,22 @@
 <div class="group">
   <div class="group__title">
     <div class="group__title-name">
+      @if (isShowTitle === true) {
+      <h2>{{ todoGroup.title }}</h2>
+      <button (click)="isShowTitle = false" class="button">Ред.</button>
+      } @else {
+      <input
+        type="text"
+        class="input"
+        [(ngModel)]="groupTitle"
+        (blur)="onEnterValue()"
+        (keyup.enter)="onEnterValue()"
+        placeholder="Введите название группы..."
+      />
+      }
     </div>
     <div>
+      <button class="button" (click)="deleteGroupEvent()">Удалить</button>
     </div>
     <div class="group__title-underline"></div>
   </div>
@@ -33,6 +47,7 @@
       class="input"
       placeholder="Название тудушки..."
       #newTodo
+      (keyup.enter)="addNewTodo(newTodo.value); newTodo.value = ''"
     />
   </div>
 </div>

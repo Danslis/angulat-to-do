@@ -1,5 +1,4 @@
 import { Directive, Input } from '@angular/core';
-import { FormsModule } from '@angular/forms';
 import { TodoItem } from '../../../interfaces/todo-group.interface';
 
 @Directive({
